@@ -10,98 +10,79 @@ body {
   line-height: 1.5;
 }
 
+/* header + navigation */
 header {
   background-color: #3b5bdb;
   color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 header h1 {
-  margin: 0 0 0.25rem;
+  margin: 0;
 }
 
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* hero */
+.hero {
+  background-color: #dbe4ff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+/* main layout */
 main {
-  max-width: 700px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
-section {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1.5rem;
+.skills {
+  padding: 2rem 0;
 }
 
-h2 {
+.skills article {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.skills article h3 {
   margin-top: 0;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin-top: 0.75rem;
-}
-
-input {
-  padding: 0.6rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-button {
-  margin-top: 1.25rem;
-  padding: 0.7rem;
-  background-color: #3b5bdb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #2f4ac0;
-}
-
-.swap-card {
-  border: 1px solid #e0e4ef;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  background-color: #fafbff;
-}
-
-.swap-card h3 {
-  margin: 0 0 0.5rem;
-}
-
-.swap-card p {
-  margin: 0.2rem 0;
-}
-
-.swap-card .delete-btn {
-  margin-top: 0.5rem;
-  padding: 0.35rem 0.75rem;
-  background-color: #e03131;
-  font-size: 0.85rem;
-}
-
-.swap-card .delete-btn:hover {
-  background-color: #c92a2a;
-}
-
+/* footer */
 footer {
+  background-color: #222;
+  color: white;
   text-align: center;
   padding: 1.5rem;
-  color: #666;
-  font-size: 0.9rem;
+  margin-top: 2rem;
 }
