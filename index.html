@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Swap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Skill Swap</h1>
+    <p>Trade what you know for what you want to learn.</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Add a Swap</h2>
+      <form id="swap-form">
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="e.g. Nyjuel" required>
+
+        <label for="offer">Skill I can teach</label>
+        <input type="text" id="offer" placeholder="e.g. Python" required>
+
+        <label for="want">Skill I want to learn</label>
+        <input type="text" id="want" placeholder="e.g. Guitar" required>
+
+        <button type="submit">Post Swap</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Available Swaps</h2>
+      <p id="empty-message">No swaps yet. Be the first to post one!</p>
+      <div id="swap-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS, and JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
