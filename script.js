@@ -51,3 +51,17 @@ document.getElementById('calc-btn').addEventListener('click', () => {
 
   result.textContent = 'Total cost: $' + calculateTotalCost(rate, hours).toFixed(2);
 });
+// find my match
+document.getElementById('match-btn').addEventListener('click', () => {
+  const category = document.getElementById('match-category').value;
+  const maxPrice = parseFloat(document.getElementById('max-price').value);
+  const results = document.getElementById('match-results');
+
+  if (isNaN(maxPrice)) {
+    results.textContent = 'Please enter a max price.';
+    return;
+  }
+
+  const matches = matchSkillsToUser({ category, maxPrice }, skills);
+  renderSkills(matches, results);
+});
