@@ -1,54 +1,39 @@
-const form = document.getElementById("swap-form");
-const swapList = document.getElementById("swap-list");
-const emptyMessage = document.getElementById("empty-message");
+const skills = [
+  { title: 'Python Tutoring', category: 'Programming', price: 20 },
+  { title: 'JavaScript Help', category: 'Programming', price: 25 },
+  { title: 'Guitar Lessons', category: 'Music', price: 15 },
+  { title: 'Piano Basics', category: 'Music', price: 18 },
+  { title: 'Resume Review', category: 'Career', price: 0 },
+  { title: 'Mock Interviews', category: 'Career', price: 10 }
+];
 
-let swaps = [];
+function renderSkills(list, container) {
+  container.innerHTML = '';
 
-function renderSwaps() {
-  swapList.innerHTML = "";
-
-  emptyMessage.style.display = swaps.length === 0 ? "block" : "none";
-
-  swaps.forEach((swap, index) => {
-    const card = document.createElement("div");
-    card.className = "swap-card";
-
-    const title = document.createElement("h3");
-    title.textContent = swap.name;
-
-    const offer = document.createElement("p");
-    offer.textContent = "Can teach: " + swap.offer;
-
-    const want = document.createElement("p");
-    want.textContent = "Wants to learn: " + swap.want;
-
-    const deleteBtn = document.createElement("button");
-    deleteBtn.className = "delete-btn";
-    deleteBtn.textContent = "Remove";
-    deleteBtn.addEventListener("click", () => {
-      swaps.splice(index, 1);
-      renderSwaps();
-    });
-
-    card.append(title, offer, want, deleteBtn);
-    swapList.appendChild(card);
-  });
-}
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const offer = document.getElementById("offer").value.trim();
-  const want = document.getElementById("want").value.trim();
-
-  if (!name || !offer || !want) {
+  if (list.length === 0) {
+    container.textContent = 'No skills found.';
     return;
   }
 
-  swaps.push({ name, offer, want });
-  renderSwaps();
-  form.reset();
+  list.forEach(skill => {
+    const card = document.createElement('article');
+    const title = document.createElement('h3');
+    title.textContent = skill.title;
+    const info = document.createElement('p');
+    info.textContent = skill.category + ' - ' + (skill.price === 0 ? 'Free' : '$' + skill.price + '/hr');
+    card.append(title, info);
+    container.appendChild(card);
+  });
+}
+
+// filter buttons
+const skillList = document.getElementById('skill-list');
+
+document.querySelectorAll('.filters button').forEach(button => {
+  button.addEventListener('click', () => {
+    const filtered = filterSkillsByCategory(skills, button.dataset.category);
+    renderSkills(filtered, skillList);
+  });
 });
 
-renderSwaps();
+renderSkills(skills, skillList);

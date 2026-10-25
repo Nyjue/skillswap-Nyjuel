@@ -86,3 +86,26 @@ footer {
   padding: 1.5rem;
   margin-top: 2rem;
 }
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters button,
+.calculator button,
+.match button {
+  padding: 0.5rem 1rem;
+  background-color: #3b5bdb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filters button:hover,
+.calculator button:hover,
+.match button:hover {
+  background-color: #2f4ac0;
+}
