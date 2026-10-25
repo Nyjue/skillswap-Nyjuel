@@ -37,3 +37,17 @@ document.querySelectorAll('.filters button').forEach(button => {
 });
 
 renderSkills(skills, skillList);
+
+// cost calculator
+document.getElementById('calc-btn').addEventListener('click', () => {
+  const rate = parseFloat(document.getElementById('rate').value);
+  const hours = parseFloat(document.getElementById('hours').value);
+  const result = document.getElementById('calc-result');
+
+  if (isNaN(rate) || isNaN(hours)) {
+    result.textContent = 'Please enter both a rate and hours.';
+    return;
+  }
+
+  result.textContent = 'Total cost: $' + calculateTotalCost(rate, hours).toFixed(2);
+});

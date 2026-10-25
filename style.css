@@ -109,3 +109,34 @@ footer {
 .match button:hover {
   background-color: #2f4ac0;
 }
+
+.calculator,
+.match {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.calculator label,
+.match label {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.75rem;
+}
+
+.calculator input,
+.match input,
+.match select {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.calculator button,
+.match button {
+  margin-top: 1rem;
+}
